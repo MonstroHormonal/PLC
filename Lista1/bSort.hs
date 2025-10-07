@@ -7,4 +7,10 @@ bSort lista | lista == sortedList = lista
         sort [] = []
         sort [s] = [s]
         sort (s:t:r) | s > t     = t : sort (s:r)
+
                      | otherwise = s : sort (t:r)
+
+main = do
+       a <- getLine
+       let result = bSort (read a :: [String])
+       print result
